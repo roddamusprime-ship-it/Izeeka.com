@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #00ff41;
+  --yellow: #ffe600;
+  --red: #ff2d2d;
+  --cyan: #00eaff;
+  --bg: #0a0a0a;
+  --panel: #0f1a0f;
+  --border: #1a4a1a;
+  --text: #b0ffb0;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'VT323', monospace;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.up { color: var(--green); }
+.down { color: var(--red); }
+.flat { color: var(--yellow); }
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::-webkit-scrollbar-thumb:hover { background: var(--green); }
+
+.cvna-counter {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: auto;
+  background: #0a0000;
+  border-top: 1px solid #4a0000;
+  border-left: 1px solid #4a0000;
+  padding: 8px 12px;
+  z-index: 1000;
+  min-width: 160px;
+}
