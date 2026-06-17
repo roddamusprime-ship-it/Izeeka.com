@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import CvnaCounter from '@/components/CvnaCounter'
 import TickerTape from '@/components/TickerTape'
+import QuoteWidget from '@/components/QuoteWidget'
 
 export const metadata: Metadata = {
   title: 'IZEEKA — T-Dubbs Stock Commentary',
@@ -21,13 +22,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           borderBottom: '1px solid var(--border)',
           background: '#000',
           gap: '12px',
-          flexWrap: 'nowrap',
         }}>
           <div style={{ flexShrink: 0 }}>
-            <div style={{ fontFamily: 'VT323, monospace', fontSize: '32px', color: 'var(--green)', letterSpacing: '4px', lineHeight: '1' }}>
+            <div style={{ fontFamily: 'VT323, monospace', fontSize: '2rem', color: 'var(--green)', letterSpacing: '4px', lineHeight: '1' }}>
               IZE<span style={{ color: 'var(--yellow)' }}>EK</span>A<span className="blink">_</span>
             </div>
-            <div style={{ fontSize: '10px', color: '#2a5a2a', whiteSpace: 'nowrap' }}>
+            <div style={{ fontSize: '0.6rem', color: '#2a5a2a', whiteSpace: 'nowrap' }}>
               NOT FINANCIAL ADVICE &nbsp;|&nbsp; T-DUBBS APPROVED &nbsp;|&nbsp; BURRY IS OUR SPIRIT ANIMAL
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {[['/', 'HOME'], ['/takes', 'THE TAKES'], ['/watchlist', 'WATCHLIST'], ['/pit', 'THE PIT']].map(([href, label]) => (
               <a key={href} href={href} style={{
                 fontFamily: 'VT323, monospace',
-                fontSize: '18px',
+                fontSize: '1.1rem',
                 color: '#4a8a4a',
                 padding: '2px 10px',
                 border: '1px solid transparent',
@@ -48,12 +48,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div style={{ textAlign: 'right', flexShrink: 0 }}>
             <span style={{
-              fontSize: '10px', padding: '1px 8px',
+              fontSize: '0.6rem', padding: '1px 8px',
               border: '1px solid var(--green)',
               color: 'var(--green)', background: 'rgba(0,255,65,0.08)',
               whiteSpace: 'nowrap',
             }}>● MARKET OPEN</span>
-            <div style={{ fontSize: '10px', color: '#2a5a2a', marginTop: '2px' }}>POLYGON.IO LIVE</div>
+            <div style={{ fontSize: '0.6rem', color: '#2a5a2a', marginTop: '2px' }}>POLYGON.IO LIVE</div>
           </div>
         </nav>
 
@@ -64,18 +64,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer style={{
           borderTop: '1px solid var(--border)',
           padding: '6px 20px',
-          fontSize: '10px',
+          fontSize: '0.6rem',
           color: '#2a4a2a',
           display: 'flex',
           justifyContent: 'space-between',
           background: '#000',
-          flexWrap: 'nowrap',
-          gap: '20px',
         }}>
-          <span style={{ whiteSpace: 'nowrap' }}>IZEEKA.COM © 2025 — NOT FINANCIAL ADVICE. DR. BURRY SEES WHAT YOU DON&apos;T.</span>
-          <span style={{ whiteSpace: 'nowrap' }}>CONVICTION IS A LIFESTYLE <span className="blink">▮</span></span>
+          <span>IZEEKA.COM © 2025 — NOT FINANCIAL ADVICE. DR. BURRY SEES WHAT YOU DON&apos;T.</span>
+          <span>CONVICTION IS A LIFESTYLE <span className="blink">▮</span></span>
         </footer>
 
+        <QuoteWidget ticker="SPCX" />
         <CvnaCounter />
       </body>
     </html>

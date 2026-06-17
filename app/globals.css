@@ -17,13 +17,16 @@
 
 * { box-sizing: border-box; }
 
-html, body {
+html {
+  font-size: 20px;
+}
+
+body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Share Tech Mono', monospace;
   margin: 0;
   padding: 0;
-  font-size: 15px;
 }
 
 h1, h2, h3, .font-display {
@@ -71,7 +74,7 @@ body::after {
   background: #0a0000;
   border-top: 1px solid #4a0000;
   border-left: 1px solid #4a0000;
-  padding: 8px 12px;
+  padding: 10px 14px;
   z-index: 1000;
-  min-width: 160px;
+  min-width: 200px;
 }
